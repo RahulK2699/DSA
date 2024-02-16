@@ -8,4 +8,6 @@ for (var i = 0; i < arr.length; i++) {
   arr_sum += arr[i];
 }
 
+return t_sum - arr_sum;
+
 console.log(t_sum - arr_sum);
