@@ -12,7 +12,7 @@ const memoizedSum = (fn) => {
       console.log("Cache");
       return cache[key];
     } else {
-      let result = sum(a, b);
+      let result = fn(a, b);
       cache[key] = result;
       return result;
     }
@@ -25,5 +25,5 @@ console.log(memo(4, 5));
 console.timeEnd();
 
 console.time();
-console.log(memo(5, 5));
+console.log(memo(4, 5));
 console.timeEnd();
