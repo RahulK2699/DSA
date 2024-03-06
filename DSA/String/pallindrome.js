@@ -17,5 +17,23 @@ var isPalindrome = function (x) {
   if (parseInt(str.join("")) === x) return true;
   else return false;
 };
-var num = 10;
-console.log(isPalindrome(num));
+
+
+function pallindromeRecursive(str) {
+
+  function recursive(str,i, j){
+
+    if(i >= j) return true;
+
+    if(str[i] !== str[j]) return false;
+
+    return pallindromeRecursive(str,i + 1, j - 1);
+  }
+
+  return recursive(str, 0, str.length - 1);
+}
+// var num = 10;
+// console.log(isPalindrome(num));
+
+let str = "abcd";
+console.log(pallindromeRecursive(str, 0, str.length - 1));
