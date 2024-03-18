@@ -20,7 +20,8 @@
 
         clearTimeout(timerId);
         timerId = setTimeout(function() {
-          myfunc.apply(context, args);
+          // myfunc.apply(context, args);
+          myfunc(...args);
         },delay)
       }
     }

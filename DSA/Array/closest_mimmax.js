@@ -48,6 +48,6 @@ function findMinMaxSubArray(arr) {
   return ans
 }
 
-const arr = [1, 2, 3, 4, 6, 1, 2, 6]
+const arr = [2,6,1,6,9]
 
 console.log(findMinMaxSubArray(arr))

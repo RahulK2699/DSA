@@ -8,7 +8,7 @@ function subArrayExists(arr, n){
   
   for (let i = 1; i < n ; i++) {
     
-      pf.push(pf[i -1] + arr[i])
+      pf.push(pf[i - 1] + arr[i])
   }
   console.log(pf)
   

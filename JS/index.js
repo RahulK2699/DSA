@@ -1,9 +1,27 @@
-function sum(a) {
-  return function (b) {
-    if (b) return sum(a + b);
-    else return a;
-  };
+import React from 'react'
+
+const MyComp = (props) => {
+
+  const withLogging = (MyComp) => {
+
+    const WithLogging = (props) => {
+      const extraProps = {
+        prop1 : "value1",
+        prop2 : "value2"
+      }
+
+      return <MyComp {...props} {...extraProps}/>
+    }
+
+    return WithLogging
+  }
+  const MyCompWithLogging = withLogging(MyComp);
+
+  return (
+    <div>MyComp {props.name}
+        <MyCompWithLogging  {...props}/>
+    </div>
+  )
 }
 
-// sum(3, 4);
-console.log(sum(3)(4)(3)(4)(3)());
+export default MyComp

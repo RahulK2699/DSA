@@ -2,18 +2,33 @@ function handleChange(value) {
   console.log(value)
 }
 
-function myDebounce(myfunc,delay) {
-let timerId;
+// function myDebounce(myfunc,delay) {
+// let timerId;
 
-return function() {
-  const context = this;
-  const args = arguments;
+// return function() {
+//   const context = this;
+//   const args = arguments;
 
-  clearTimeout(timerId);
-  timerId = setTimeout(function() {
-    myfunc.apply(context, args);
-  },delay)
-}
+//   clearTimeout(timerId);
+//   timerId = setTimeout(function() {
+//     myfunc.apply(context, args);
+//   },delay)
+// }
+// }
+
+function myDebounce(func,delay) {
+
+  let timerId;
+
+  return function () {
+    const context = this;
+    const args = arguments;
+
+    clearTimeout(timerId);
+    timerId = setTimeout(function() {
+     func.apply(context, args);
+    },delay);
+  }
 }
 
 const debounce = myDebounce(handleChange,400);
