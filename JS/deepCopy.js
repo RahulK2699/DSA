@@ -25,6 +25,3 @@ let obj = {
 let obj2 = deepCopy(obj);
 obj2.sname.surname =  " Kadam";
 
-console.log(obj)
-console.log(obj2)
-console.log("5" + -3);
